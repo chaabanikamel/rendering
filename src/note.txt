@@ -1,0 +1,2 @@
+higher order function (map,reduce,filtre)
+state =data lmoujouda fi site oula (project)oula app
