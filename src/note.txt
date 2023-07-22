@@ -1,2 +1,5 @@
 higher order function (map,reduce,filtre)
 state =data lmoujouda fi site oula (project)oula app
+      onClick={we9et na3mel click}
+      onChange={bech nbadel value}
+      
