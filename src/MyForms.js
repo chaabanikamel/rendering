@@ -1,10 +1,13 @@
-
-import{computeHeadingLevel} from "@testing-library/react";
 import {useState} from "react"
 const MyForms = () => {
   // const[nameInput,setNameInput]=useState("")
   // const[nameEmail,setEmail  Input]=useState("")
-    const [formInputs,setFormInput] = useState({name:"",email:"",age:"",gender:""})
+    const [formInputs,setFormInput] = useState({name:"",email:"",age:"",gender:"",generalInfo:"",
+  isStudent:"",country:"",status:"", 
+});
+ function handleCheckBoxChanged(event){
+
+ }
   return (
   <form  onSubmit = {(event )=>{
   event.preventDefault()
@@ -32,6 +35,32 @@ const MyForms = () => {
     <label >gender:</label>
     <input value ={formInputs.gender } onChange={{ event}=>{setFormInput{{...formInput,gender:event.target.value}}}}/>
     <hr />
+    <div>
+    <input  value="student" type="radio" name="status" checked ={formInputs.status == "student"} onChange={{ event}=>{setFormInput{{...formInput,status:event.target.value}}}} />
+    Student
+    <input value="student" type="radio" checked ={formInputs.status == "teacher"} onChange={{ event}=>{setFormInput{{...formInput,status:event.target.value}}}}/>
+    Teacher
+    </div>
+
+    <hr />
+    <select  value ={formInputs.country } onChange={{ event}=>{setFormInput{{...formInput,country:event.target.value}}}}>
+      <option >Filand</option>
+      <option >Canda</option>
+      <option >Azerbaijan</option>
+    </select>
+    <hr />
+    <label> General Info</label>
+    <hr />
+    <label>Are you student</label>
+    <input type="checkbox" chked={formInputs.isStudent} onChange={handleCHeckboxchanged} />
+    <hr />
+      <textarea
+    value={formInputs.generalInfo} 
+    onChange={{event}=>{
+        setFormInput{{...formInput,generalInfo:event.target.value}}
+    }}/>
+    
+      
     <button>Submit</button>
    </form>
   )
